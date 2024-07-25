@@ -6,8 +6,8 @@
   "scripts": {
     "watch:css": "tailwindcss -i src/assets/css/app.css -o src/assets/css/app.out.css --postcss --watch",
     "build:css": "tailwindcss -i src/assets/css/app.css -o dist/assets/css/app.min.css --postcss --minify",
-    "watch:eleventy": "eleventy --serve --quiet",
-    "build:eleventy": "eleventy",
+    "watch:eleventy": "eleventy --serve --pathprefix=Eleventy-Crash-Course --quiet",
+    "build:eleventy": "eleventy --pathprefix=Eleventy-Crash-Course",
     "dev": "run-p watch:*",
     "build": "run-s build:*"
   },
