@@ -1,4 +1,9 @@
+require('dotenv').config({
+  path: process.env.NODE_ENV === 'production' ? '.env.prod' : '.env.dev'
+});
+
 module.exports = function(eleventyConfig) {
+  eleventyConfig.addGlobalData('env', process.env);
   // eleventyConfig.addPlugin(require("./config/browsersync"));
 
   // eleventyConfig.addWatchTarget("src/css/")

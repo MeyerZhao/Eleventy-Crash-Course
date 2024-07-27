@@ -5,15 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   {# tailwind #}
-  <link rel="stylesheet" href="{{ '/assets/css/app.out.css' | url }}">
+  {# <link rel="stylesheet" href="{{ '/assets/css/app.out.css'| url }}"> #}
+  {# <link rel="stylesheet" href="{{ '/assets/css/app.out.css' if (env.ELEVENTY_RUN_MODE else === 'serve') '/assets/css/app.min.css' | url }}"> #}
+  {% if env.ELEVENTY_RUN_MODE == "serve" %}
+    <link rel="stylesheet" href="{{ '/assets/css/app.out.css' | url }}">
+  {% else %}
+    <link rel="stylesheet" href="{{ '/assets/css/app.min.css' | url }}">
+  {% endif %}
+
   <title>Document</title>
 </head>
 <body>
   {% include "header.njk" %}
-  <h1>layout - default</h1>
-  <h2 style="color:blue">{{ title | default("my blog") }}</h2>
+  <h1 class="text-4xl">layout - default</h1>
+  <h2 class="text-3xl">{{ title | default("my blog") }}</h2>
   <main>
-      {{ content | safe }}
+  <h1 class="text-4xl font-bold text-amber-500"> {{env.ELEVENTY_RUN_MODE}} </h1>
+    Foo is {{ env.FOO }} and baz is {{ env.BAZ }}.
+
+    {{ content | safe }}
   </main>
   {% include "footer.njk" %}
 </body>

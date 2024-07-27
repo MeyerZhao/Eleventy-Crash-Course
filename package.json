@@ -6,16 +6,20 @@
   "scripts": {
     "watch:css": "tailwindcss -i src/assets/css/app.css -o src/assets/css/app.out.css --postcss --watch",
     "build:css": "tailwindcss -i src/assets/css/app.css -o dist/assets/css/app.min.css --postcss --minify",
-    "watch:eleventy": "eleventy --serve --pathprefix=Eleventy-Crash-Course --quiet",
-    "build:eleventy": "eleventy --pathprefix=Eleventy-Crash-Course",
+    "local:css": "tailwindcss -i src/assets/css/app.css -o Eleventy-Crash-Course/assets/css/app.min.css --postcss --minify",
+    "watch:eleventy": "eleventy --serve --pathprefix=dist --quiet",
+    "build:eleventy": "NODE_ENV=production eleventy --pathprefix=Eleventy-Crash-Course",
+    "local:eleventy": "NODE_ENV=production eleventy --pathprefix=Eleventy-Crash-Course --output=Eleventy-Crash-Course",
     "dev": "run-p watch:*",
-    "build": "run-s build:*"
+    "build": "run-s build:*",
+    "local": "run-s build:*"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@11ty/eleventy": "^2.0.1"
+    "@11ty/eleventy": "^2.0.1",
+    "dotenv": "^16.4.5"
   },
   "devDependencies": {
     "@11ty/eleventy-server-browsersync": "^1.0.2",
