@@ -52,16 +52,9 @@ layout: layout.njk
 
 {% for post in collections.post %}
 <h2><a href="{{ post.url | url }}" class="text-sky-500">{{ post.data.title }}</a></h2>
-<p>{{ post.content | safe }}</p>
+<p>{{ post.data.description }}</p>
+{# <p>{{ post.content | safe }}</p> #}
 {% endfor %}
 
 
 
-  {# <select class="focus:outline-none h-10 rounded-full px-3 border">
-		<option value="">Auto</option>
-		<option data-bs-theme-value="light" value="light">light</option>
-		<option data-bs-theme-value="dark" value="dark">dark</option>
-		<option value="🌸">🌸 Pink</option>
-		<option value="🐬">🐬 Blue</option>
-		<option value="🐤">🐤 Yellow</option>
-	</select> #}
