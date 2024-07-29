@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,10 +12,13 @@
   {% else %}
     <link rel="stylesheet" href="{{ '/assets/css/app.min.css' | url }}">
   {% endif %}
-
   <title>Document</title>
+
+
+
 </head>
-<body>
+{# <body class="  dark:bg-slate-600 dark:text-white"> #}
+<body class="bg-[--background] text-[--foreground]">
   {% include "header.njk" %}
   <h1 class="text-4xl">layout - default</h1>
   <h2 class="text-3xl">{{ title | default("my blog") }}</h2>
@@ -26,6 +29,8 @@
     {{ content | safe }}
   </main>
   {% include "footer.njk" %}
+
+  <script src="{{ '/assets/js/app.js' | url}}"></script>
 </body>
 </html>
 
