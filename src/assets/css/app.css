@@ -1,5 +1,6 @@
 @import 'tailwindcss/base';
 @import "tailwindcss/components";
+@import "./components//Container.css";
 @import "./components/Accordion.css";
 @import "./components/Alerts.css";
 @import "tailwindcss/utilities";
