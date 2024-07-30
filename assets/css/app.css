@@ -2,3 +2,62 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@layer base {
+  :root {
+    --foreground: 75 50% 1%;
+    --background: 75 34% 100%;
+
+    --muted-fg: 45 14% 38%;
+    --muted-bg: 45 25% 95%;
+
+    --popover-fg: 75 50% 1%;
+    --popover-bg: 75 34% 100%;
+
+    --card-fg: 75 50% 1%;
+    --card-bg: 75 34% 100%;
+
+    --border: 75 9% 93%;
+    --input: 75 9% 93%;
+
+    --primary-fg: 0 0% 100%;
+    --primary-bg: 75 68% 22%;
+
+    --secondary-fg: 45 68% 82%;
+    --secondary-bg: 45 68% 22%;
+
+    --accent-fg: 105 68% 22%;
+    --accent-bg: 105 68% 82%;
+
+    --destructive-fg: 19 81% 40%;
+    --destructive-bg: 0 0% 100%;
+
+    --ring: 75 68% 22%;
+    --radius: 0.5rem;
+  }
+
+  /* @media (prefers-color-scheme: dark) {
+    :root {
+      --background: #050a34;
+      --foreground: #e2e8f0;
+    }
+  } */
+
+  [data-mode="dark"] {
+    --background: #050a34;
+    --foreground: #e2e8f0;
+  }
+
+}
+
+
+.dropdown-menu:not(.show) {
+  display: none;
+}
+
+.dropdown-menu.show {
+  position: absolute;
+  inset: 0 auto auto 0;
+  background-color: #fff;
+  border-radius: 1rem;
+}
+
