@@ -51,7 +51,7 @@ layout: layout.njk
   <h1 class="tw-bg-teal-500" >text</h1>
 
   {% for post in collections.post %}
-  <h2><a href="{{ post.url | url }}" class="tw-text-sky-500">{{ post.data.title }}</a></h2>
+  <h2><a href="{{ post.url | url }}" class="text-sky-500">{{ post.data.title }}</a></h2>
   <p>{{ post.data.description }}</p>
   {# <p>{{ post.content | safe }}</p> #}
   {% endfor %}
